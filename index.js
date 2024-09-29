@@ -14,6 +14,11 @@ connectDB()
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    // cache: "bounded",
+    // persistedQueries: {
+    //     cache: new InMemoryLRUCache()
+    // },
+    persistedQueries: false,
     context: ({ req }) => {
         // console.log(req.headers)
 
